@@ -1,0 +1,80 @@
+@import "./sass/mixins";
+@import "./sass/reset";
+@import "./sass/backHomeFooter";
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+
+.EmojiSearch-page-container {
+  position: relative;
+  background-color: #f9b522;
+  font-family: "Acme";
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .backHome-btn {
+    position: fixed;
+    top: 80vh;
+    left: 15px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #d08215;
+    color: #fef9f3;
+    @include transition;
+    &:hover {
+      font-size: larger;
+    }
+    transform: translateX(-1000px);
+  }
+
+  h1 {
+    padding: 50px;
+    color: #fef9f3;
+    @include transition;
+    transform: translateY(-1000px);
+  }
+
+  input {
+    background-color: #fef9f3;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: "Acme";
+    margin-bottom: 45px;
+    @include transition;
+    transform: translateY(-1000px);
+  }
+
+  .emojis-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .emoji-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      background-color: #d08215;
+      padding: 12px;
+      border-radius: 25px;
+
+      .emoji-title {
+        color: #fef9f3;
+      }
+      .emoji-symbol {
+        @include transition;
+
+        &:hover,
+        &:active {
+          background-color: #f9b522;
+        }
+
+        padding: 10px;
+        background-color: #fef9f3;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+}

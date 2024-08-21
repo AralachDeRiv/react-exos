@@ -1,0 +1,254 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+body {
+  scrollbar-width: none;
+}
+
+.page-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  scrollbar-width: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit; /* Hérite de la couleur de son parent */
+  background-color: transparent; /* Supprime toute couleur de fond */
+  font: inherit;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  all: unset;
+  border: none;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.default-background {
+  background-color: blue;
+  overflow-x: hidden;
+}
+
+.emojiSearch-new-background {
+  background-color: #f9b522;
+}
+
+.todo-new-background {
+  background-color: #d2b48c;
+}
+
+.stopWatch-new-background {
+  background-color: #2c3e50;
+}
+
+.markdownReader-new-background {
+  background-color: #c0c0c0;
+}
+
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+}
+.home-page-container .link-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  overflow-x: hidden;
+  transition: all 0.5s ease-in-out 0s;
+}
+.home-page-container .link-container h2 {
+  cursor: pointer;
+}
+.home-page-container .link-container:nth-child(odd) {
+  transform: translateX(-10000px);
+}
+.home-page-container .link-container:nth-child(even) {
+  transform: translateX(10000px);
+}
+.home-page-container .todo-link {
+  background-color: #c49c67;
+}
+.home-page-container .todo-link a > h2 {
+  transition: all 0.2s ease-in-out 0.5s;
+  position: relative;
+  z-index: 999;
+  font-family: "Just Another Hand";
+  font-weight: 500;
+  font-size: 55px;
+  font-style: normal;
+  color: #1e4e8c;
+}
+.home-page-container .todo-link:hover::after {
+  left: 0;
+}
+.home-page-container .todo-link:hover a > h2 {
+  transform: rotate(10deg);
+  font-size: 60px;
+}
+.home-page-container .todo-link::after {
+  transition: all 0.5s ease-in-out 0s;
+  position: absolute;
+  left: -80%;
+  content: "";
+  width: 95vw;
+  height: 175px;
+  margin: 2em auto;
+  background: #fff;
+  box-shadow: 4px 4px 0 #8b5a2b;
+  background-image: linear-gradient(90deg, #fff 12px, 0, #8b5a2b 15px, 0, #a57c55 20px, 0, #fff 100%), radial-gradient(circle closest-side, rgba(255, 255, 255, 0) 88%, #fff 100%), radial-gradient(circle at 22px 8px, #a57c55 40%, #8b5a2b 40%, #8b5a2b 100%);
+  background-size: 32px 8px, 32px 16px, 32px 16px;
+  background-repeat: space no-repeat;
+  background-position: center top, center 6px, center 6px;
+}
+.home-page-container .emojiSearch-link {
+  background-color: #d08215;
+}
+.home-page-container .emojiSearch-link:hover::after {
+  transform: translateX(0px);
+}
+.home-page-container .emojiSearch-link:hover h2 {
+  font-size: 50px;
+}
+.home-page-container .emojiSearch-link h2 {
+  position: relative;
+  z-index: 999;
+  font-family: "Acme";
+  font-size: 45px;
+  color: #fff;
+  padding: 20px;
+  background-color: #f9b522;
+  border-radius: 30px;
+  border: 2px solid #976904;
+  transition: all 0.2s ease-in-out 0.5s;
+}
+.home-page-container .emojiSearch-link::after {
+  transition: all 0.5s ease-in-out 0s;
+  position: absolute;
+  background-color: #f9b522;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 200px;
+  width: 85vw;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  background-image: url("../img/happy.png");
+  background-size: 50px;
+  background-position: 100px 100px;
+  transform: translateX(1000px);
+}
+.home-page-container .stopWatch-link {
+  background-color: #77815c;
+  font-family: "Playfair Display";
+  color: #fffff0;
+}
+.home-page-container .stopWatch-link h2 {
+  transition: all 0.5s ease-in-out 0s;
+  font-size: 45px;
+  text-shadow: 1px 1px 0 #b08d57, -1px -1px 0 #b08d57, 1px -1px 0 #b08d57, -1px 1px 0 #b08d57;
+}
+.home-page-container .stopWatch-link:hover h2 {
+  transform: rotate(360deg);
+}
+.home-page-container .stopWatch-link:hover::after {
+  right: 85vw;
+}
+.home-page-container .stopWatch-link:hover::before {
+  left: 85vw;
+}
+.home-page-container .stopWatch-link::after {
+  transition: all 0.5s ease-in-out 0s;
+  content: "";
+  position: absolute;
+  background-image: url("../img/oldClock.png");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  transform: translateX(50%);
+}
+.home-page-container .stopWatch-link::before {
+  transition: all 0.5s ease-in-out 0s;
+  content: "";
+  position: absolute;
+  background-image: url("../img/oldClock.png");
+  background-size: 200px;
+  background-repeat: no-repeat;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  transform: translateX(-50%);
+}
+.home-page-container .markdownReader-link {
+  background-color: #1a1a1a;
+  color: #00ff00;
+  font-family: "VT323";
+  position: relative;
+}
+.home-page-container .markdownReader-link:hover h2 {
+  font-size: 65px;
+}
+.home-page-container .markdownReader-link:hover::after {
+  transform: translateX(-1000px);
+}
+.home-page-container .markdownReader-link h2 {
+  font-size: 60px;
+  transition: all 0.5s ease-in-out 0s;
+}
+.home-page-container .markdownReader-link::after {
+  transition: all 0.5s ease-in-out 0s;
+  z-index: 9999;
+  position: absolute;
+  content: "";
+  background-image: url("../img/rocket.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(-100deg);
+  width: 100px;
+  height: 50px;
+  right: 0;
+  bottom: 0;
+}/*# sourceMappingURL=Home.css.map */

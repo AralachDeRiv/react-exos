@@ -1,0 +1,135 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+body {
+  scrollbar-width: none;
+}
+
+.page-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  scrollbar-width: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit; /* Hérite de la couleur de son parent */
+  background-color: transparent; /* Supprime toute couleur de fond */
+  font: inherit;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  all: unset;
+  border: none;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.backHomeFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: greenyellow;
+  text-align: center;
+  padding: 10px;
+}
+
+.EmojiSearch-page-container {
+  position: relative;
+  background-color: #f9b522;
+  font-family: "Acme";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.EmojiSearch-page-container .backHome-btn {
+  position: fixed;
+  top: 80vh;
+  left: 15px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #d08215;
+  color: #fef9f3;
+  transition: all 0.5s ease-in-out 0s;
+  transform: translateX(-1000px);
+}
+.EmojiSearch-page-container .backHome-btn:hover {
+  font-size: larger;
+}
+.EmojiSearch-page-container h1 {
+  padding: 50px;
+  color: #fef9f3;
+  transition: all 0.5s ease-in-out 0s;
+  transform: translateY(-1000px);
+}
+.EmojiSearch-page-container input {
+  background-color: #fef9f3;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: "Acme";
+  margin-bottom: 45px;
+  transition: all 0.5s ease-in-out 0s;
+  transform: translateY(-1000px);
+}
+.EmojiSearch-page-container .emojis-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.EmojiSearch-page-container .emojis-container .emoji-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background-color: #d08215;
+  padding: 12px;
+  border-radius: 25px;
+}
+.EmojiSearch-page-container .emojis-container .emoji-container .emoji-title {
+  color: #fef9f3;
+}
+.EmojiSearch-page-container .emojis-container .emoji-container .emoji-symbol {
+  transition: all 0.5s ease-in-out 0s;
+  padding: 10px;
+  background-color: #fef9f3;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.EmojiSearch-page-container .emojis-container .emoji-container .emoji-symbol:hover, .EmojiSearch-page-container .emojis-container .emoji-container .emoji-symbol:active {
+  background-color: #f9b522;
+}/*# sourceMappingURL=EmojiSearch.css.map */

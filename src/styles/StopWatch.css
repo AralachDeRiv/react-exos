@@ -1,0 +1,175 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+body {
+  scrollbar-width: none;
+}
+
+.page-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  scrollbar-width: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit; /* Hérite de la couleur de son parent */
+  background-color: transparent; /* Supprime toute couleur de fond */
+  font: inherit;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  all: unset;
+  border: none;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.stopWatch-page-container {
+  position: relative;
+  background-color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  font-family: "Playfair Display";
+  color: #f5f0e1;
+}
+.stopWatch-page-container .backHome-btn {
+  position: fixed;
+  top: 80vh;
+  left: 5px;
+  background-color: #4e3b31;
+  padding: 15px;
+  border-radius: 10px;
+  color: #fffff0;
+  font-size: 30px;
+  border: 2px solid #b08d57;
+  transform: translateX(-1000px);
+  transition: all 1s ease-in-out 0s;
+}
+.stopWatch-page-container .laps-container {
+  transition: all 1s ease-in-out 0s;
+  opacity: 0;
+  margin-top: 20vh;
+  width: 150px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.stopWatch-page-container .laps-container h2 {
+  font-size: 35px;
+  text-decoration: underline;
+  text-decoration-color: #b08d57;
+  text-decoration-thickness: 2px;
+}
+.stopWatch-page-container .laps-container ul {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+.stopWatch-page-container .laps-container ul li {
+  font-size: 30px;
+  list-style: upper-roman;
+  padding-left: 20px;
+}
+.stopWatch-page-container .first-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.stopWatch-page-container .first-container h2 {
+  transition: all 1s ease-in-out 0s;
+  opacity: 0;
+  min-height: 40px;
+  font-size: 40px;
+  font-weight: 400;
+}
+.stopWatch-page-container .first-container .goldenWatch-container {
+  transition: all 1s ease-in-out 0s;
+  transform: translateY(-1000px);
+  position: relative;
+  height: 400px;
+  width: 400px;
+}
+.stopWatch-page-container .first-container .goldenWatch-container .clock-btn, .stopWatch-page-container .first-container .goldenWatch-container .lap-btn, .stopWatch-page-container .first-container .goldenWatch-container .pause-btn, .stopWatch-page-container .first-container .goldenWatch-container .reset-btn, .stopWatch-page-container .first-container .goldenWatch-container .start-btn {
+  position: absolute;
+  background-color: #b08d57;
+  height: 10px;
+  width: 30px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.stopWatch-page-container .first-container .goldenWatch-container .clock-btn::after, .stopWatch-page-container .first-container .goldenWatch-container .lap-btn::after, .stopWatch-page-container .first-container .goldenWatch-container .pause-btn::after, .stopWatch-page-container .first-container .goldenWatch-container .reset-btn::after, .stopWatch-page-container .first-container .goldenWatch-container .start-btn::after {
+  position: absolute;
+  content: "";
+  background-color: #4e3b31;
+  bottom: -10px;
+  left: 12px;
+  height: 10px;
+  width: 5px;
+}
+.stopWatch-page-container .first-container .goldenWatch-container .clock-btn p, .stopWatch-page-container .first-container .goldenWatch-container .lap-btn p, .stopWatch-page-container .first-container .goldenWatch-container .pause-btn p, .stopWatch-page-container .first-container .goldenWatch-container .reset-btn p, .stopWatch-page-container .first-container .goldenWatch-container .start-btn p {
+  position: absolute;
+  top: -25px;
+}
+.stopWatch-page-container .first-container .goldenWatch-container .start-btn {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.stopWatch-page-container .first-container .goldenWatch-container .reset-btn {
+  top: 33px;
+  left: 30%;
+  transform: rotate(-25deg);
+}
+.stopWatch-page-container .first-container .goldenWatch-container .pause-btn {
+  top: 33px;
+  right: 30%;
+  transform: rotate(25deg);
+}
+.stopWatch-page-container .first-container .goldenWatch-container .lap-btn {
+  right: 33px;
+  top: 50%;
+  transform: translateX(23px) rotate(90deg);
+}
+.stopWatch-page-container .first-container .goldenWatch-container .lap-btn p {
+  transform: rotate(-90deg);
+}/*# sourceMappingURL=StopWatch.css.map */

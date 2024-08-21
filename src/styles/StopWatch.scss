@@ -1,0 +1,144 @@
+@import "./sass/reset";
+@import "./sass/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+$clock-face-bg: #f5f0e1;
+$antique-gold: #b08d57;
+$weathered-wood: #8c7a67;
+$dark-bronze: #4e3b31;
+$rusted-copper: #a3542f;
+$midnight-blue: #2c3e50;
+$ivory: #fffff0;
+$patina-green: #7e9a95;
+
+.stopWatch-page-container {
+  position: relative;
+  background-color: $midnight-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  font-family: "Playfair Display";
+  color: $clock-face-bg;
+
+  .backHome-btn {
+    position: fixed;
+    top: 80vh;
+    left: 5px;
+    background-color: $dark-bronze;
+    padding: 15px;
+    border-radius: 10px;
+    color: $ivory;
+    font-size: 30px;
+    border: 2px solid $antique-gold;
+    transform: translateX(-1000px);
+    @include transition($time: 1s);
+  }
+
+  .laps-container {
+    @include transition($time: 1s);
+    opacity: 0;
+    margin-top: 20vh;
+    width: 150px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    h2 {
+      font-size: 35px;
+      text-decoration: underline;
+      text-decoration-color: $antique-gold;
+      text-decoration-thickness: 2px;
+    }
+
+    ul {
+      align-self: flex-end;
+      display: flex;
+      flex-direction: column;
+
+      li {
+        font-size: 30px;
+        list-style: upper-roman;
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .first-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    h2 {
+      @include transition($time: 1s);
+      opacity: 0;
+      min-height: 40px;
+      font-size: 40px;
+      font-weight: 400;
+    }
+
+    .goldenWatch-container {
+      @include transition($time: 1s);
+      transform: translateY(-1000px);
+      position: relative;
+      height: 400px;
+      width: 400px;
+
+      .clock-btn {
+        position: absolute;
+        background-color: $antique-gold;
+        height: 10px;
+        width: 30px;
+        border-radius: 25px;
+        cursor: pointer;
+        &::after {
+          position: absolute;
+          content: "";
+          background-color: $dark-bronze;
+          bottom: -10px;
+          left: 12px;
+          height: 10px;
+          width: 5px;
+        }
+        p {
+          position: absolute;
+          top: -25px;
+        }
+      }
+
+      .start-btn {
+        @extend .clock-btn;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .reset-btn {
+        @extend .clock-btn;
+        top: 33px;
+        left: 30%;
+        transform: rotate(-25deg);
+      }
+
+      .pause-btn {
+        @extend .clock-btn;
+        top: 33px;
+        right: 30%;
+        transform: rotate(25deg);
+      }
+
+      .lap-btn {
+        @extend .clock-btn;
+        right: 33px;
+        top: 50%;
+        transform: translateX(23px) rotate(90deg);
+        p {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+}

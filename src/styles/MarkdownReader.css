@@ -1,0 +1,285 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+body {
+  scrollbar-width: none;
+}
+
+.page-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  scrollbar-width: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit; /* Hérite de la couleur de son parent */
+  background-color: transparent; /* Supprime toute couleur de fond */
+  font: inherit;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  all: unset;
+  border: none;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.mardownReader-page-container {
+  background-color: #c0c0c0;
+  color: #66ff66;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+.mardownReader-page-container .scale-container {
+  transform: scale(0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  padding-top: 2px;
+  scrollbar-width: none;
+}
+.mardownReader-page-container .first-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.mardownReader-page-container .first-container .screen-container {
+  transition: all 0.5s ease-in-out 0s;
+  transform: translateX(-1000px);
+  height: 350px;
+  width: 450px;
+  overflow: auto;
+  scrollbar-width: none;
+  position: relative;
+  color: #00ff00;
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  padding: 20px;
+  border: 8px solid #4b4b4b;
+  font-family: "VT323";
+  font-size: 25px;
+}
+.mardownReader-page-container .first-container .screen-container .overlay {
+  position: absolute;
+  inset: 0;
+}
+.mardownReader-page-container .first-container .screen-container .overlay .laws {
+  white-space: pre-wrap;
+}
+.mardownReader-page-container .first-container .screen-container .overlay:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(16, 16, 16, 0.25) 50%, rgba(16, 16, 16, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015));
+  background-size: 100% 0.1875rem, 0.375rem 100%;
+  z-index: 2;
+}
+.mardownReader-page-container .first-container .screen-container .overlay:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+  background-color: rgba(16, 16, 16, 0.2);
+  animation: flicker 0.3s infinite;
+  z-index: 2;
+}
+@keyframes flicker {
+  0% {
+    opacity: 0.15795;
+  }
+  5% {
+    opacity: 0.31511;
+  }
+  10% {
+    opacity: 0.94554;
+  }
+  15% {
+    opacity: 0.2469;
+  }
+  20% {
+    opacity: 0.62031;
+  }
+  25% {
+    opacity: 0.0293;
+  }
+  30% {
+    opacity: 0.00899;
+  }
+  35% {
+    opacity: 0.5344;
+  }
+  40% {
+    opacity: 0.12778;
+  }
+  45% {
+    opacity: 0.52042;
+  }
+  50% {
+    opacity: 0.3823;
+  }
+  55% {
+    opacity: 0.2198;
+  }
+  60% {
+    opacity: 0.9383;
+  }
+  65% {
+    opacity: 0.86615;
+  }
+  70% {
+    opacity: 0.68695;
+  }
+  75% {
+    opacity: 0.55749;
+  }
+  80% {
+    opacity: 0.96984;
+  }
+  85% {
+    opacity: 0.0361;
+  }
+  90% {
+    opacity: 0.24467;
+  }
+  95% {
+    opacity: 0.08351;
+  }
+  100% {
+    opacity: 0.54813;
+  }
+}
+.mardownReader-page-container .first-container .keyboard-container {
+  transition: all 0.5s ease-in-out 0s;
+  opacity: 0;
+}
+.mardownReader-page-container .first-container .keyboard-container .keyboard-keys-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+  gap: 9px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.mardownReader-page-container .first-container .keyboard-container .keyboard-keys-container .button {
+  transform: translate(1px);
+  background-color: #d3d3d3;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -khtml-appearance: none;
+  box-sizing: initial;
+  border: none;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: relative;
+  min-width: 46px;
+  max-width: 150px;
+  height: 19px;
+  padding: 31px 17px;
+  border-radius: 10px;
+  overflow: hidden;
+  /* TEXT */
+  text-align: center;
+  font: bold 20px Arial, sans-serif;
+  color: #4b4b4b;
+  transition: box-shadow 0.02s cubic-bezier(0.79, 0.03, 0.43, 1);
+  box-shadow: inset 0px 0px 0px 0px #44413c, 0px 0px 0px 1.5px #44413c, 0px 16px 12px 0px rgba(80, 77, 71, 0.1215686275);
+}
+.mardownReader-page-container .first-container .keyboard-container .keyboard-keys-container .button:active {
+  transition: box-shadow 0.1s cubic-bezier(0, 0, 0, 1);
+  box-shadow: inset 0px 0px 6px 0px #44413c, 0px 0px 0px 1.5px #44413c, 0px 10px 12px 0px rgba(80, 77, 71, 0.1215686275);
+}
+.mardownReader-page-container .first-container .keyboard-container .keyboard-keys-container .button:active::before {
+  background: linear-gradient(0deg, #dddad3, #b6b0a2);
+  transition: transform 0.1s cubic-bezier(0, 0, 0, 1), background-color 0.1s cubic-bezier(0, 0, 0, 1);
+}
+.mardownReader-page-container .first-container .keyboard-container .keyboard-keys-container .button::before {
+  left: 10px;
+  top: 12px;
+  border-radius: 7px;
+  box-shadow: 0px -1px 0px 0px #dedcdc, 0px 2px 0px 0px #9a948c;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  max-width: 150px;
+  width: 80%;
+  height: 60px;
+  transition: transform 0.01s cubic-bezier(0.79, 0.03, 0.43, 1), background-color 0.02s cubic-bezier(0.79, 0.03, 0.43, 1);
+  background: linear-gradient(0deg, #e3e0d9, #c4bfb4);
+}
+.mardownReader-page-container .first-container .keyboard-container .keyboard-keys-container .button::after {
+  left: 0;
+  top: 0;
+  z-index: -2;
+  position: absolute;
+  content: "";
+  filter: blur(2px);
+  border-top: 40px solid #e9e6e0;
+  border-bottom: 42px solid #999286;
+  border-left: 40px solid #cdc8be;
+  border-right: 100px solid #cdc8be;
+}
+.mardownReader-page-container .input-container {
+  transition: all 0.5s ease-in-out 0s;
+  transform: translateX(1000px);
+}
+.mardownReader-page-container .input-container textarea {
+  min-width: 350px;
+  min-height: 400px;
+  overflow: hidden;
+  resize: none;
+  padding: 20px;
+  font-family: "Space Mono";
+  font-size: 20px;
+  outline: none;
+  border-radius: 15px;
+  border: 10px solid #4b4b4b;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-color: #d3d3d3;
+}/*# sourceMappingURL=MarkdownReader.css.map */

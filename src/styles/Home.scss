@@ -1,0 +1,245 @@
+@import "./sass/reset";
+@import "./sass/mixins";
+
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+.default-background {
+  background-color: blue;
+  overflow-x: hidden;
+}
+
+.emojiSearch-new-background {
+  background-color: #f9b522;
+}
+
+.todo-new-background {
+  background-color: #d2b48c;
+}
+
+.stopWatch-new-background {
+  background-color: #2c3e50;
+}
+
+.markdownReader-new-background {
+  background-color: #c0c0c0;
+}
+
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+
+  .link-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    overflow-x: hidden;
+    h2 {
+      cursor: pointer;
+    }
+    @include transition;
+  }
+  .link-container:nth-child(odd) {
+    transform: translateX(-10000px);
+  }
+  .link-container:nth-child(even) {
+    transform: translateX(10000px);
+  }
+
+  .todo-link {
+    background-color: darken(#d2b48c, 10%);
+    a > h2 {
+      @include transition($time: 0.2s, $delay: 0.5s);
+      position: relative;
+      z-index: 999;
+      font-family: "Just Another Hand";
+      font-weight: 500;
+      font-size: 55px;
+      font-style: normal;
+      color: #1e4e8c;
+    }
+
+    &:hover {
+      &::after {
+        left: 0;
+      }
+      a > h2 {
+        transform: rotate(10deg);
+        font-size: 60px;
+      }
+    }
+    &::after {
+      @include transition;
+      position: absolute;
+      left: -80%;
+      content: "";
+      width: 95vw;
+      height: 175px;
+      margin: 2em auto;
+      background: #fff;
+      box-shadow: 4px 4px 0 #8b5a2b;
+      background-image: linear-gradient(
+          90deg,
+          #fff 12px,
+          0,
+          #8b5a2b 15px,
+          0,
+          #a57c55 20px,
+          0,
+          #fff 100%
+        ),
+        radial-gradient(
+          circle closest-side,
+          rgba(255, 255, 255, 0) 88%,
+          #fff 100%
+        ),
+        radial-gradient(
+          circle at 22px 8px,
+          #a57c55 40%,
+          #8b5a2b 40%,
+          #8b5a2b 100%
+        );
+      background-size: 32px 8px, 32px 16px, 32px 16px;
+      background-repeat: space no-repeat;
+      background-position: center top, center 6px, center 6px;
+    }
+  }
+  .emojiSearch-link {
+    background-color: #d08215;
+
+    &:hover {
+      &::after {
+        transform: translateX(0px);
+      }
+      h2 {
+        font-size: 50px;
+      }
+    }
+
+    h2 {
+      position: relative;
+      z-index: 999;
+      font-family: "Acme";
+      font-size: 45px;
+      color: #fff;
+      padding: 20px;
+      background-color: #f9b522;
+      border-radius: 30px;
+      border: 2px solid darken(#f9b522, 25%);
+      @include transition($time: 0.2s, $delay: 0.5s);
+    }
+
+    &::after {
+      @include transition;
+      position: absolute;
+      background-color: #f9b522;
+      content: "";
+      top: 0;
+      right: 0;
+      height: 200px;
+      width: 85vw;
+      border-top-left-radius: 100px;
+      border-bottom-left-radius: 100px;
+      background-image: url("../img/happy.png");
+      background-size: 50px;
+      background-position: 100px 100px;
+
+      transform: translateX(1000px);
+    }
+  }
+
+  .stopWatch-link {
+    background-color: #77815c;
+    font-family: "Playfair Display";
+    color: #fffff0;
+
+    h2 {
+      @include transition;
+      font-size: 45px;
+      text-shadow: 1px 1px 0 #b08d57, -1px -1px 0 #b08d57, 1px -1px 0 #b08d57,
+        -1px 1px 0 #b08d57;
+    }
+
+    &:hover {
+      h2 {
+        transform: rotate(360deg);
+      }
+
+      &::after {
+        right: 85vw;
+      }
+      &::before {
+        left: 85vw;
+      }
+    }
+
+    &::after {
+      @include transition;
+      content: "";
+      position: absolute;
+      background-image: url("../img/oldClock.png");
+      background-size: 200px;
+      background-repeat: no-repeat;
+      right: 0;
+      bottom: 0;
+      width: 200px;
+      height: 200px;
+      transform: translateX(50%);
+    }
+
+    &::before {
+      @include transition;
+      content: "";
+      position: absolute;
+      background-image: url("../img/oldClock.png");
+      background-size: 200px;
+      background-repeat: no-repeat;
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      height: 200px;
+      transform: translateX(-50%);
+    }
+  }
+
+  .markdownReader-link {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    font-family: "VT323";
+    position: relative;
+
+    &:hover {
+      h2 {
+        font-size: 65px;
+      }
+      &::after {
+        transform: translateX(-1000px);
+      }
+    }
+
+    h2 {
+      font-size: 60px;
+      @include transition;
+    }
+
+    &::after {
+      @include transition;
+      z-index: 9999;
+      position: absolute;
+      content: "";
+      background-image: url("../img/rocket.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(-100deg);
+      width: 100px;
+      height: 50px;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
